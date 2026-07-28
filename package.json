@@ -1,0 +1,10 @@
+{
+  "name": "mon-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Portfolio personnel de Kengne Ouafo Cabrel avec assistant IA (Vercel serverless).",
+  "scripts": {
+    "dev": "vercel dev"
+  }
+}

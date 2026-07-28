@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kengne Ouafo Cabrel | Portfolio</title>
+  <meta name="description" content="Portfolio de Kengne Ouafo Cabrel, développeur backend Python/Django et développeur mobile Flutter, étudiant en Master SIGL à l'Institut Universitaire de la Côte.">
+
+  <!-- Open Graph / Twitter Card -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kengne Ouafo Cabrel | Portfolio">
+  <meta property="og:description" content="Développeur Backend & Mobile Flutter — Master SIGL, Institut Universitaire de la Côte. Découvrez mon parcours, mes expériences et mes projets.">
+  <meta property="og:image" content="https://votre-domaine.vercel.app/assets/formuloo/bilan.png">
+  <meta property="og:url" content="https://votre-domaine.vercel.app/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kengne Ouafo Cabrel | Portfolio">
+  <meta name="twitter:description" content="Développeur Backend & Mobile Flutter — Master SIGL, Institut Universitaire de la Côte.">
+  <meta name="twitter:image" content="https://votre-domaine.vercel.app/assets/formuloo/bilan.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Google Fonts : Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome (icônes) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="header" id="header">
+    <nav class="navbar">
+      <a href="#home" class="logo">Cabrel<span>.</span></a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active-link" data-i18n="navHome">Accueil</a></li>
+        <li><a href="#about" class="nav-link" data-i18n="navAbout">À propos</a></li>
+        <li><a href="#experience" class="nav-link" data-i18n="navExperience">Expérience</a></li>
+        <li><a href="#skills" class="nav-link" data-i18n="navSkills">Compétences</a></li>
+        <li><a href="#projects" class="nav-link" data-i18n="navProjects">Projets</a></li>
+        <li><a href="#contact" class="nav-link" data-i18n="navContact">Contact</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <button type="button" class="control-btn" id="themeToggle" aria-label="Basculer le thème sombre">
+          <i class="fa-solid fa-moon" id="themeIcon"></i>
+        </button>
+        <button type="button" class="control-btn lang-btn" id="langToggle" aria-label="Changer de langue / Switch language">
+          <span id="langLabel">EN</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="navLinks">
+          <i class="fa-solid fa-bars" id="menuIcon"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===================== HERO / HOME ===================== -->
+    <section class="hero" id="home">
+      <div class="hero-bg" aria-hidden="true"></div>
+
+      <div class="container hero-container">
+        <div class="hero-text reveal" data-reveal="left">
+          <p class="hero-greeting" data-i18n="heroGreeting">Bonjour, je suis</p>
+          <h1 class="hero-name">Kengne Ouafo <span class="text-gradient">Cabrel</span></h1>
+          <h2 class="hero-role">
+            <span id="typedText"></span><span class="cursor" aria-hidden="true">|</span>
+          </h2>
+          <p class="hero-desc" data-i18n="heroDesc">
+            Étudiant en Master Systèmes d'Information et Génie Logiciel à l'Institut Universitaire de la Côte,
+            passionné par le développement backend, le développement mobile Flutter et l'architecture
+            logicielle orientée services.
+          </p>
+
+          <div class="hero-socials">
+            <a href="https://github.com/kengneouafocabrel" target="_blank" rel="noopener noreferrer" aria-label="Profil GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://gitlab.formuloo.com/kengne.cabrel" target="_blank" rel="noopener noreferrer" aria-label="Profil GitLab"><i class="fa-brands fa-gitlab"></i></a>
+            <a href="mailto:cabrelkengne906@gmail.com" aria-label="Envoyer un email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://wa.me/237681246078" target="_blank" rel="noopener noreferrer" aria-label="Contacter sur WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+
+          <div class="hero-buttons">
+            <!-- Placeholder : remplacer par le vrai fichier PDF du CV -->
+            <a href="assets/CV_Kengne_Ouafo_Cabrel.pdf" download class="btn btn-primary">
+              <i class="fa-solid fa-download"></i> <span data-i18n="heroCtaCv">Télécharger mon CV</span>
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              <i class="fa-solid fa-paper-plane"></i> <span data-i18n="heroCtaContact">Me contacter</span>
+            </a>
+          </div>
+
+          <!-- Badge de disponibilité : texte piloté par AVAILABILITY_STATUS en haut de main.js -->
+          <div class="availability-badge">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            <span id="availabilityText"></span>
+          </div>
+        </div>
+
+        <div class="hero-image reveal" data-reveal="right">
+          <div class="hero-image-blob">
+            <!-- Placeholder : remplacer src par la vraie photo de profil -->
+            <img src="assets/profile.jpg" alt="Photo de profil de Kengne Ouafo Cabrel" id="profileImg" onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback');">
+            <i class="fa-solid fa-user placeholder-icon" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-down" aria-label="Défiler vers la section À propos">
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="section about" id="about">
+      <div class="container">
+        <p class="section-subtitle reveal" data-i18n="aboutSubtitle">Faisons connaissance</p>
+        <h2 class="section-title reveal" data-i18n="aboutTitle">À propos de <span class="text-gradient">moi</span></h2>
+
+        <div class="about-content">
+          <div class="about-text reveal" data-reveal="left">
+            <p data-i18n="aboutP1">
+              Je m'appelle <strong>Kengne Ouafo Cabrel</strong>, titulaire d'un Master Professionnel en
+              Systèmes d'Information et Génie Logiciel (SIGL) de l'<strong>Institut Universitaire de la Côte</strong>.
+              Au fil de mon parcours, j'ai développé une solide culture technique allant des fondamentaux de
+              la programmation jusqu'à la conception d'architectures backend orientées services.
+            </p>
+            <p data-i18n="aboutP2">
+              Curieux et rigoureux, j'aime transformer des problématiques réelles — santé, gestion locative,
+              gestion d'entreprise — en solutions logicielles fiables, en combinant développement backend,
+              applications mobiles Flutter et bonnes pratiques DevOps.
+            </p>
+
+            <div class="about-info">
+              <div class="info-item">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <div>
+                  <span class="info-label" data-i18n="aboutLabelSchool">Établissement</span>
+                  <span class="info-value">Institut Universitaire de la Côte — SIGL</span>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                  <span class="info-label" data-i18n="aboutLabelLocation">Localisation</span>
+                  <span class="info-value">Douala, Bonabéri, Cameroun</span>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                  <span class="info-label" data-i18n="aboutLabelEmail">Email</span>
+                  <span class="info-value">cabrelkengne906@gmail.com</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline verticale du cursus scolaire (du plus récent au plus ancien) -->
+          <div class="timeline reveal" data-reveal="right">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2024 - 2026</span>
+                <h3 data-i18n="t1Title">Master Professionnel — SIGL</h3>
+                <p data-i18n="t1Desc">Institut Universitaire de la Côte · diplôme obtenu</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2023 - 2024</span>
+                <h3 data-i18n="t2Title">Licence Professionnelle — Génie Logiciel</h3>
+                <p data-i18n="t2Desc">Institut Universitaire de la Côte</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2021 - 2023</span>
+                <h3 data-i18n="t3Title">Brevet de Technicien Supérieur — Génie Logiciel</h3>
+                <p data-i18n="t3Desc">Institut Universitaire de la Côte</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2020 - 2021</span>
+                <h3 data-i18n="t4Title">Baccalauréat C</h3>
+                <p data-i18n="t4Desc">Lycée Bilingue de Mambanda</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Encart Mémoire de fin d'études -->
+        <div class="memoire-card reveal">
+          <div class="memoire-icon"><i class="fa-solid fa-file-lines"></i></div>
+          <div class="memoire-content">
+            <span class="memoire-label" data-i18n="memoireLabel">Mémoire de fin d'études</span>
+            <h3 class="memoire-title">
+              Conception et mise en œuvre d'une architecture backend orientée service avec gouvernance
+              contractuelle des API REST pour un ERP cloud-native multi-tenant destiné aux PME africaines :
+              cas de Formuloo OS
+            </h3>
+            <!-- Placeholder : je fournirai le vrai fichier PDF -->
+            <a href="assets/Version_corrige_kengne_ouafo_cabrel.pdf" download class="btn btn-outline">
+              <i class="fa-solid fa-download"></i> <span data-i18n="memoireBtn">Télécharger le mémoire (PDF)</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section class="section experience" id="experience">
+      <div class="container">
+        <p class="section-subtitle reveal" data-i18n="experienceSubtitle">Mon parcours</p>
+        <h2 class="section-title reveal" data-i18n="experienceTitle">Expérience <span class="text-gradient">professionnelle</span></h2>
+
+        <!-- Card mise en avant : Formuloo OS -->
+        <article class="experience-card experience-featured reveal">
+          <div class="experience-header">
+            <div class="experience-icon"><i class="fa-solid fa-building"></i></div>
+            <div>
+              <h3>Formuloo OS</h3>
+              <span class="experience-role" data-i18n="exp1Role">Développeur Backend (Stage) · 2026 · 3 mois</span>
+            </div>
+          </div>
+
+          <!-- Stats bar animée (comptage au scroll) -->
+          <div class="stats-bar" data-stats>
+            <div class="stat-item">
+              <span class="stat-number" data-target="156" data-suffix="+">0</span>
+              <span class="stat-label" data-i18n="stat1Label">Endpoints API</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-target="100" data-suffix="+">0</span>
+              <span class="stat-label" data-i18n="stat2Label">Tests automatisés</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-target="33" data-suffix="/33">0</span>
+              <span class="stat-label" data-i18n="stat3Label">Tests passants</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-target="20" data-suffix="">0</span>
+              <span class="stat-label" data-i18n="stat4Label">Documents techniques</span>
+            </div>
+          </div>
+
+          <p class="experience-desc" data-i18n="exp1Desc">
+            ERP cloud-native pour PME africaines (Douala), méthodologie Agile Scrum, 22 tickets Jira traités.
+          </p>
+
+          <ul class="experience-highlights">
+            <li data-i18n="exp1Bullet1">Conception d'une architecture microservices ERP : 7 services Django indépendants derrière une Gateway Nginx</li>
+            <li data-i18n="exp1Bullet2">Module CRM : 38 endpoints API, pipeline Kanban, conversion devis→facture, dashboard KPIs, interface i18n FR/EN/PT</li>
+            <li data-i18n="exp1Bullet3">Module Stock : mouvements transactionnels atomiques (transaction.atomic + select_for_update), alertes de seuil minimum</li>
+            <li data-i18n="exp1Bullet4">Module Analytics : KPIs inter-services, dashboards configurables, webhooks sécurisés HMAC-SHA256</li>
+            <li data-i18n="exp1Bullet5">Stack d'observabilité : Prometheus + Grafana (3 dashboards) + OpenTelemetry</li>
+            <li data-i18n="exp1Bullet6">6 contrats OpenAPI publiés en approche Contract-First (clés API, rate limiting)</li>
+            <li data-i18n="exp1Bullet7">Pipeline CI/CD GitLab (lint, validation de contrats, tests) et sécurité (RBAC granulaire, isolation multi-tenant JWT, 0 secret en clair)</li>
+          </ul>
+
+          <div class="project-tags">
+            <span>Python</span>
+            <span>Django</span>
+            <span>DRF</span>
+            <span>PostgreSQL</span>
+            <span>Redis</span>
+            <span>Celery</span>
+            <span>Docker</span>
+            <span>Nginx</span>
+            <span>GitLab CI</span>
+            <span>Prometheus</span>
+            <span>Grafana</span>
+            <span>JWT/SSO</span>
+            <span>OpenTelemetry</span>
+          </div>
+
+          <!-- Galerie de captures d'écran organisée par module -->
+          <div class="gallery" data-gallery>
+            <!-- Emplacement vidéo de démo : masqué automatiquement si demo.mp4 est absent -->
+            <div class="demo-video-wrapper" id="demoVideoWrapper">
+              <video class="demo-video" id="demoVideo" autoplay loop muted playsinline poster="assets/formuloo/bilan.png">
+                <source src="assets/formuloo/demo.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="gallery-tabs" role="tablist" aria-label="Modules Formuloo OS">
+              <button type="button" class="gallery-tab active" role="tab" aria-selected="true" data-tab="auth" data-i18n="tabAuth">Authentification</button>
+              <button type="button" class="gallery-tab" role="tab" aria-selected="false" data-tab="compta" data-i18n="tabCompta">Comptabilité</button>
+              <button type="button" class="gallery-tab" role="tab" aria-selected="false" data-tab="crm" data-i18n="tabCrm">CRM &amp; Ventes</button>
+              <button type="button" class="gallery-tab" role="tab" aria-selected="false" data-tab="rh" data-i18n="tabRh">Ressources Humaines</button>
+            </div>
+
+            <div class="gallery-panel active" data-panel="auth">
+              <div class="gallery-grid">
+                <button type="button" class="gallery-thumb" data-i18n-key="capLogin" data-caption="Connexion sécurisée avec SSO Keycloak">
+                  <img src="assets/formuloo/login.png" alt="Connexion sécurisée avec SSO Keycloak" loading="lazy">
+                  <span class="gallery-caption">Connexion sécurisée avec SSO Keycloak</span>
+                </button>
+                <button type="button" class="gallery-thumb" data-i18n-key="capRegister" data-caption="Inscription multi-profils (particulier, entreprise, administrateur)">
+                  <img src="assets/formuloo/register.png" alt="Inscription multi-profils (particulier, entreprise, administrateur)" loading="lazy">
+                  <span class="gallery-caption">Inscription multi-profils (particulier, entreprise, administrateur)</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="gallery-panel" data-panel="compta" hidden>
+              <div class="gallery-grid">
+                <button type="button" class="gallery-thumb" data-i18n-key="capBilan" data-caption="Bilan comptable SYSCOHADA généré en temps réel">
+                  <img src="assets/formuloo/bilan.png" alt="Bilan comptable SYSCOHADA généré en temps réel" loading="lazy">
+                  <span class="gallery-caption">Bilan comptable SYSCOHADA généré en temps réel</span>
+                </button>
+                <button type="button" class="gallery-thumb" data-i18n-key="capSaisie" data-caption="Saisie d'écriture en partie double avec contrôle d'équilibre automatique">
+                  <img src="assets/formuloo/saisie-ecriture.png" alt="Saisie d'écriture en partie double avec contrôle d'équilibre automatique" loading="lazy">
+                  <span class="gallery-caption">Saisie d'écriture en partie double avec contrôle d'équilibre automatique</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="gallery-panel" data-panel="crm" hidden>
+              <div class="gallery-grid">
+                <button type="button" class="gallery-thumb" data-i18n-key="capPipeline" data-caption="Pipeline commercial avec valeur pondérée par probabilité">
+                  <img src="assets/formuloo/pipeline.png" alt="Pipeline commercial avec valeur pondérée par probabilité" loading="lazy">
+                  <span class="gallery-caption">Pipeline commercial avec valeur pondérée par probabilité</span>
+                </button>
+                <button type="button" class="gallery-thumb" data-i18n-key="capContacts" data-caption="Gestion des contacts CRM, clients et prospects">
+                  <img src="assets/formuloo/contacts.png" alt="Gestion des contacts CRM, clients et prospects" loading="lazy">
+                  <span class="gallery-caption">Gestion des contacts CRM, clients et prospects</span>
+                </button>
+                <button type="button" class="gallery-thumb" data-i18n-key="capFactures" data-caption="Suivi de facturation avec DSO moyen et relances">
+                  <img src="assets/formuloo/factures.png" alt="Suivi de facturation avec DSO moyen et relances" loading="lazy">
+                  <span class="gallery-caption">Suivi de facturation avec DSO moyen et relances</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="gallery-panel" data-panel="rh" hidden>
+              <div class="gallery-grid">
+                <button type="button" class="gallery-thumb" data-i18n-key="capEmployes" data-caption="Annuaire des employés avec contrats et salaires">
+                  <img src="assets/formuloo/employes.png" alt="Annuaire des employés avec contrats et salaires" loading="lazy">
+                  <span class="gallery-caption">Annuaire des employés avec contrats et salaires</span>
+                </button>
+                <button type="button" class="gallery-thumb" data-i18n-key="capOrganigramme" data-caption="Organigramme par département">
+                  <img src="assets/formuloo/organigramme.png" alt="Organigramme par département" loading="lazy">
+                  <span class="gallery-caption">Organigramme par département</span>
+                </button>
+                <button type="button" class="gallery-thumb" data-i18n-key="capPaie" data-caption="Gestion de la paie multi-devise (XAF)">
+                  <img src="assets/formuloo/paie.png" alt="Gestion de la paie multi-devise (XAF)" loading="lazy">
+                  <span class="gallery-caption">Gestion de la paie multi-devise (XAF)</span>
+                </button>
+              </div>
+            </div>
+
+            <p class="gallery-context" data-i18n="galleryContext">
+              ERP cloud-native multi-tenant pour PME africaines — modules RH, Comptabilité SYSCOHADA,
+              CRM et Ventes sur une seule plateforme.
+            </p>
+          </div>
+
+          <!-- Code source privé : pas de bouton "voir le code" pour ce projet -->
+          <p class="privacy-badge">
+            <i class="fa-solid fa-lock"></i>
+            <span data-i18n="privacyBadge">Code source privé — projet propriétaire de l'entreprise</span>
+          </p>
+
+          <!-- Citation optionnelle de l'encadrant -->
+          <blockquote class="experience-quote">
+            <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
+            <p data-i18n="quotePlaceholder">[Citation de l'encadrant à ajouter]</p>
+          </blockquote>
+        </article>
+
+        <!-- Expériences précédentes -->
+        <div class="experience-grid-secondary">
+          <article class="experience-card reveal">
+            <div class="experience-header">
+              <div class="experience-icon"><i class="fa-solid fa-laptop-code"></i></div>
+              <div>
+                <h3>Nobisoft</h3>
+                <span class="experience-role" data-i18n="exp2Role">Développeur Web · 2024 - 2025</span>
+              </div>
+            </div>
+            <p class="experience-desc" data-i18n="exp2Desc">
+              Conception et réalisation d'un système de détection de la pneumonie par intelligence artificielle.
+            </p>
+          </article>
+
+          <article class="experience-card reveal">
+            <div class="experience-header">
+              <div class="experience-icon"><i class="fa-solid fa-laptop-code"></i></div>
+              <div>
+                <h3>Horizon</h3>
+                <span class="experience-role" data-i18n="exp3Role">Développeur Web · 2023 - 2024</span>
+              </div>
+            </div>
+            <p class="experience-desc" data-i18n="exp3Desc">
+              Conception et développement d'une application de e-learning.
+            </p>
+          </article>
+
+          <article class="experience-card reveal">
+            <div class="experience-header">
+              <div class="experience-icon"><i class="fa-solid fa-laptop-code"></i></div>
+              <div>
+                <h3>Clinique Saint-Joseph</h3>
+                <span class="experience-role" data-i18n="exp4Role">Développeur Web · 2022 - 2023</span>
+              </div>
+            </div>
+            <p class="experience-desc" data-i18n="exp4Desc">
+              Conception et réalisation d'une application de gestion hospitalière.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section class="section skills" id="skills">
+      <div class="container">
+        <p class="section-subtitle reveal" data-i18n="skillsSubtitle">Ce que je maîtrise</p>
+        <h2 class="section-title reveal" data-i18n="skillsTitle">Mes <span class="text-gradient">compétences</span></h2>
+
+        <div class="skills-grid">
+          <div class="skill-card reveal">
+            <div class="skill-icon"><i class="fa-solid fa-server"></i></div>
+            <h3 data-i18n="skillCatBackend">Backend</h3>
+            <ul class="skill-list">
+              <li><i class="fa-solid fa-check"></i> Python</li>
+              <li><i class="fa-solid fa-check"></i> Django</li>
+              <li><i class="fa-solid fa-check"></i> Django REST Framework</li>
+              <li><i class="fa-solid fa-check"></i> PostgreSQL</li>
+              <li><i class="fa-solid fa-check"></i> Redis</li>
+              <li><i class="fa-solid fa-check"></i> Celery</li>
+              <li><i class="fa-solid fa-check"></i> JWT / SSO</li>
+              <li><i class="fa-solid fa-check"></i> RBAC multi-tenant</li>
+              <li><i class="fa-solid fa-check"></i> OpenAPI</li>
+            </ul>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-icon"><i class="fa-solid fa-diagram-project"></i></div>
+            <h3 data-i18n="skillCatDevops">DevOps &amp; Ops</h3>
+            <ul class="skill-list">
+              <li><i class="fa-solid fa-check"></i> Docker</li>
+              <li><i class="fa-solid fa-check"></i> GitLab CI/CD</li>
+              <li><i class="fa-solid fa-check"></i> Nginx</li>
+              <li><i class="fa-solid fa-check"></i> Prometheus</li>
+              <li><i class="fa-solid fa-check"></i> Grafana</li>
+              <li><i class="fa-solid fa-check"></i> OpenTelemetry</li>
+            </ul>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
+            <h3 data-i18n="skillCatLanguages">Langages</h3>
+            <ul class="skill-list">
+              <li><i class="fa-solid fa-check"></i> C</li>
+              <li><i class="fa-solid fa-check"></i> C++</li>
+              <li><i class="fa-solid fa-check"></i> Java</li>
+              <li><i class="fa-solid fa-check"></i> C#</li>
+              <li><i class="fa-solid fa-check"></i> JavaScript</li>
+              <li><i class="fa-solid fa-check"></i> PHP</li>
+            </ul>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-icon"><i class="fa-solid fa-layer-group"></i></div>
+            <h3 data-i18n="skillCatFrameworks">Frameworks &amp; Front-End</h3>
+            <ul class="skill-list">
+              <li><i class="fa-solid fa-check"></i> HTML</li>
+              <li><i class="fa-solid fa-check"></i> CSS</li>
+              <li><i class="fa-solid fa-check"></i> JavaScript</li>
+              <li><i class="fa-solid fa-check"></i> React</li>
+              <li><i class="fa-solid fa-check"></i> Flutter</li>
+              <li><i class="fa-solid fa-check"></i> Flask</li>
+            </ul>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-icon"><i class="fa-solid fa-people-group"></i></div>
+            <h3 data-i18n="skillCatMethodology">Méthodologie</h3>
+            <ul class="skill-list">
+              <li><i class="fa-solid fa-check"></i> Agile</li>
+              <li><i class="fa-solid fa-check"></i> Scrum</li>
+            </ul>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-icon"><i class="fa-solid fa-language"></i></div>
+            <h3 data-i18n="skillCatSpoken">Langues parlées</h3>
+            <ul class="skill-list">
+              <li><i class="fa-solid fa-check"></i> Français — <span data-i18n="skillLangFrLevel">Bon niveau</span></li>
+              <li><i class="fa-solid fa-check"></i> Anglais — <span data-i18n="skillLangEnLevel">Niveau moyen</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="section projects" id="projects">
+      <div class="container">
+        <p class="section-subtitle reveal" data-i18n="projectsSubtitle">Mon travail</p>
+        <h2 class="section-title reveal" data-i18n="projectsTitle">Mes <span class="text-gradient">projets</span></h2>
+
+        <div class="projects-grid">
+          <article class="project-card reveal">
+            <div class="project-icon"><i class="fa-solid fa-lungs"></i></div>
+            <h3 data-i18n="project1Title">Détection de la pneumonie par IA</h3>
+            <p class="project-meta" data-i18n="project1Meta">Réalisé chez Nobisoft</p>
+            <p data-i18n="project1Desc">
+              Système permettant d'uploader une image radiographique des poumons, analysée
+              automatiquement par un modèle d'intelligence artificielle afin de détecter une
+              pneumonie.
+            </p>
+            <div class="project-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>Bootstrap</span>
+              <span>Python</span>
+              <span>Flask</span>
+              <span>Keras</span>
+              <span>NumPy</span>
+              <span>MySQL</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/kengneouafocabrel" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fa-brands fa-github"></i> <span data-i18n="projectCodeBtn">Voir le code sur GitHub</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-icon"><i class="fa-solid fa-house-chimney"></i></div>
+            <h3 data-i18n="project2Title">Gestion de contrats de location immobilière</h3>
+            <p data-i18n="project2Desc">
+              Application de gestion locative complète : biens, locataires, contrats et paiements
+              avec rappels automatiques, génération de reçus et gestion des documents légaux.
+              Interface mobile dédiée pour locataires et propriétaires.
+            </p>
+            <div class="project-tags">
+              <span>Spring Boot</span>
+              <span>Flutter</span>
+              <span>SQLite</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/kengneouafocabrel" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fa-brands fa-github"></i> <span data-i18n="projectCodeBtn">Voir le code sur GitHub</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <p class="section-subtitle reveal" data-i18n="contactSubtitle">Discutons</p>
+        <h2 class="section-title reveal" data-i18n="contactTitle">Me <span class="text-gradient">contacter</span></h2>
+
+        <div class="contact-content">
+          <div class="contact-info reveal" data-reveal="left">
+            <p class="contact-lead" data-i18n="contactLead">
+              Une question, une opportunité de stage/emploi ou simplement envie d'échanger ?
+              N'hésitez pas à me contacter directement ou via le formulaire.
+            </p>
+
+            <div class="contact-item">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <span class="info-label" data-i18n="contactLabelEmail">Email</span>
+                <a href="mailto:cabrelkengne906@gmail.com" class="info-value">cabrelkengne906@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <i class="fa-brands fa-whatsapp"></i>
+              <div>
+                <span class="info-label" data-i18n="contactLabelPhone">Téléphone</span>
+                <a href="https://wa.me/237681246078" target="_blank" rel="noopener noreferrer" class="info-value">+237 681 246 078 (WhatsApp)</a><br>
+                <a href="tel:+237697930055" class="info-value">+237 697 930 055</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <i class="fa-brands fa-github"></i>
+              <div>
+                <span class="info-label" data-i18n="contactLabelGithub">GitHub</span>
+                <a href="https://github.com/kengneouafocabrel" target="_blank" rel="noopener noreferrer" class="info-value">github.com/kengneouafocabrel</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <i class="fa-brands fa-gitlab"></i>
+              <div>
+                <span class="info-label" data-i18n="contactLabelGitlab">GitLab</span>
+                <a href="https://gitlab.formuloo.com/kengne.cabrel" target="_blank" rel="noopener noreferrer" class="info-value">gitlab.formuloo.com/kengne.cabrel</a>
+              </div>
+            </div>
+
+            <div class="hero-socials contact-socials">
+              <a href="https://github.com/kengneouafocabrel" target="_blank" rel="noopener noreferrer" aria-label="Profil GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="https://gitlab.formuloo.com/kengne.cabrel" target="_blank" rel="noopener noreferrer" aria-label="Profil GitLab"><i class="fa-brands fa-gitlab"></i></a>
+              <a href="mailto:cabrelkengne906@gmail.com" aria-label="Envoyer un email"><i class="fa-solid fa-envelope"></i></a>
+              <a href="https://wa.me/237681246078" target="_blank" rel="noopener noreferrer" aria-label="Contacter sur WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+          </div>
+
+          <form class="contact-form reveal" data-reveal="right" id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="name" data-i18n="formLabelName">Nom complet</label>
+              <input type="text" id="name" name="name" data-i18n-placeholder="formPlaceholderName" placeholder="Votre nom" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email" data-i18n="formLabelEmail">Adresse email</label>
+              <input type="email" id="email" name="email" placeholder="vous@exemple.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message" data-i18n="formLabelMessage">Message</label>
+              <textarea id="message" name="message" rows="5" data-i18n-placeholder="formPlaceholderMessage" placeholder="Votre message..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full">
+              <i class="fa-solid fa-paper-plane"></i> <span data-i18n="formSubmit">Envoyer le message</span>
+            </button>
+
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <a href="#home" class="logo">Cabrel<span>.</span></a>
+
+      <div class="footer-socials">
+        <a href="https://github.com/kengneouafocabrel" target="_blank" rel="noopener noreferrer" aria-label="Profil GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://gitlab.formuloo.com/kengne.cabrel" target="_blank" rel="noopener noreferrer" aria-label="Profil GitLab"><i class="fa-brands fa-gitlab"></i></a>
+        <a href="mailto:cabrelkengne906@gmail.com" aria-label="Envoyer un email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://wa.me/237681246078" target="_blank" rel="noopener noreferrer" aria-label="Contacter sur WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+
+      <p class="footer-copy">&copy; <span id="year"></span> Kengne Ouafo Cabrel. <span data-i18n="footerRights">Tous droits réservés.</span></p>
+    </div>
+  </footer>
+
+  <!-- Bouton retour en haut -->
+  <button id="backToTop" class="back-to-top" aria-label="Retour en haut de la page">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Lightbox pour la galerie de captures d'écran (Formuloo OS) -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Aperçu de la capture d'écran">
+    <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Fermer l'aperçu">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <button type="button" class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Image précédente">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <figure class="lightbox-figure">
+      <img src="" alt="" id="lightboxImg">
+      <figcaption id="lightboxCaption"></figcaption>
+    </figure>
+    <button type="button" class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Image suivante">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+  </div>
+
+  <!-- ===================== ASSISTANT IA (CHAT) ===================== -->
+  <div class="chat-widget">
+    <button type="button" class="chat-toggle" id="chatToggle" aria-label="Ouvrir l'assistant IA" aria-expanded="false" aria-controls="chatPanel">
+      <i class="fa-solid fa-comment-dots" id="chatToggleIcon"></i>
+    </button>
+
+    <div class="chat-panel" id="chatPanel" role="dialog" aria-label="Assistant IA du portfolio" hidden>
+      <div class="chat-header">
+        <div>
+          <p class="chat-title" data-i18n="chatTitle">Assistant de Cabrel</p>
+          <p class="chat-subtitle" data-i18n="chatSubtitle">Posez une question sur son parcours</p>
+        </div>
+        <button type="button" class="chat-close" id="chatClose" aria-label="Fermer l'assistant">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="chat-messages" id="chatMessages" role="log" aria-live="polite"></div>
+
+      <form class="chat-form" id="chatForm">
+        <label for="chatInput" class="sr-only">Votre message</label>
+        <input type="text" id="chatInput" data-i18n-placeholder="chatPlaceholder" placeholder="Écrivez votre message..." autocomplete="off" required>
+        <button type="submit" class="chat-send" aria-label="Envoyer le message">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
