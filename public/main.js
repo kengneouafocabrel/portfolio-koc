@@ -4,9 +4,12 @@
 // Texte du badge de disponibilité affiché sous les boutons du Hero.
 // Modifiable facilement ici, dans les deux langues.
 const AVAILABILITY_STATUS = {
-  fr: "Disponible pour un poste ou un stage",
-  en: "Available for a job or an internship",
+  fr: "Disponible pour un poste",
+  en: "Available for full-time positions",
 };
+
+// Langue active (bascule FR/EN gérée en section 7)
+let currentLang = "fr";
 
 /* ==========================================================================
    1. MENU HAMBURGER (mobile)
@@ -76,18 +79,32 @@ backToTop.addEventListener("click", () => {
 /* ==========================================================================
    4. EFFET "TYPED TEXT" SUR LES RÔLES DU HERO
    ========================================================================== */
-const roles = [
-  "Étudiant en Génie Logiciel",
-  "Développeur Backend",
-  "Développeur Mobile Flutter",
-];
+const rolesByLang = {
+  fr: [
+    "Ingénieur en Systèmes d'Information et Génie Logiciel",
+    "Développeur Fullstack",
+    "Développeur Mobile Flutter",
+  ],
+  en: [
+    "Information Systems & Software Engineer",
+    "Fullstack Developer",
+    "Flutter Mobile Developer",
+  ],
+};
 
 const typedTextEl = document.getElementById("typedText");
 let roleIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
 
+function resetTypedEffect() {
+  roleIndex = 0;
+  charIndex = 0;
+  isDeleting = false;
+}
+
 function typeEffect() {
+  const roles = rolesByLang[currentLang];
   const currentRole = roles[roleIndex];
 
   if (isDeleting) {
@@ -165,7 +182,7 @@ const translations = {
 
     heroGreeting: "Bonjour, je suis",
     heroDesc:
-      "Étudiant en Master Systèmes d'Information et Génie Logiciel à l'Institut Universitaire de la Côte, passionné par le développement backend, le développement mobile Flutter et l'architecture logicielle orientée services.",
+      "Ingénieur diplômé en Systèmes d'Information et Génie Logiciel de l'Institut Universitaire de la Côte, passionné par le développement fullstack, le développement mobile Flutter et l'architecture logicielle orientée services.",
     heroCtaCv: "Télécharger mon CV",
     heroCtaContact: "Me contacter",
 
@@ -189,6 +206,8 @@ const translations = {
     t4Desc: "Lycée Bilingue de Mambanda",
 
     memoireLabel: "Mémoire de fin d'études",
+    memoireTitle:
+      "Conception et mise en œuvre d'une architecture backend orientée service avec gouvernance contractuelle des API REST pour un ERP cloud-native multi-tenant destiné aux PME africaines : cas de Formuloo OS",
     memoireBtn: "Télécharger le mémoire (PDF)",
 
     experienceSubtitle: "Mon parcours",
@@ -302,7 +321,7 @@ const translations = {
 
     heroGreeting: "Hello, I'm",
     heroDesc:
-      "Master's student in Information Systems & Software Engineering at Institut Universitaire de la Côte, passionate about backend development, Flutter mobile development and service-oriented software architecture.",
+      "Graduate engineer in Information Systems & Software Engineering from Institut Universitaire de la Côte, passionate about fullstack development, Flutter mobile development and service-oriented software architecture.",
     heroCtaCv: "Download my resume",
     heroCtaContact: "Contact me",
 
@@ -326,6 +345,8 @@ const translations = {
     t4Desc: "Bilingual High School of Mambanda",
 
     memoireLabel: "Final-year thesis",
+    memoireTitle:
+      "Design and implementation of a service-oriented backend architecture with contractual governance of REST APIs for a cloud-native multi-tenant ERP for African SMEs: the case of Formuloo OS",
     memoireBtn: "Download the thesis (PDF)",
 
     experienceSubtitle: "My journey",
@@ -429,8 +450,6 @@ const translations = {
   },
 };
 
-let currentLang = "fr";
-
 const langToggle = document.getElementById("langToggle");
 const langLabel = document.getElementById("langLabel");
 const availabilityText = document.getElementById("availabilityText");
@@ -467,6 +486,7 @@ function applyTranslations(lang) {
 langToggle.addEventListener("click", () => {
   currentLang = currentLang === "fr" ? "en" : "fr";
   applyTranslations(currentLang);
+  resetTypedEffect();
 });
 
 // Applique la langue par défaut (français) au chargement, dont le texte de disponibilité

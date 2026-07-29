@@ -530,6 +530,15 @@ body.dark-mode .header.scrolled {
   font-size: 1.1rem;
 }
 
+/* Le wrapper texte (label + valeur) doit pouvoir rétrécir sous son contenu naturel */
+.info-item > div,
+.contact-item > div {
+  flex: 1;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 .info-label {
   display: block;
   font-size: 0.8rem;
@@ -539,6 +548,9 @@ body.dark-mode .header.scrolled {
 .info-value {
   display: block;
   font-weight: 600;
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
   word-break: break-word;
 }
 
@@ -603,12 +615,14 @@ body.dark-mode .header.scrolled {
   display: flex;
   gap: 24px;
   align-items: flex-start;
+  max-width: 100%;
   background: var(--bg-color-alt);
   padding: 32px;
   border-radius: 20px;
   box-shadow: 0 20px 45px rgba(99, 13, 178, 0.14);
   transform: translateY(-4px);
   border: 2px solid transparent;
+  box-sizing: border-box;
   background-image:
     linear-gradient(var(--bg-color-alt), var(--bg-color-alt)),
     var(--gradient);
@@ -627,6 +641,15 @@ body.dark-mode .header.scrolled {
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
+}
+
+/* Empêche le contenu texte de forcer l'élargissement du flex item (bug classique min-width:auto) */
+.memoire-content {
+  flex: 1;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .memoire-label {
@@ -644,12 +667,18 @@ body.dark-mode .header.scrolled {
   line-height: 1.5;
   font-weight: 500;
   margin-bottom: 20px;
+  max-width: 100%;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 /* ==========================================================================
    6. EXPERIENCE
    ========================================================================== */
 .experience-card {
+  max-width: 100%;
+  box-sizing: border-box;
   background: var(--bg-color-alt);
   padding: 36px;
   border-radius: 18px;
@@ -674,6 +703,14 @@ body.dark-mode .header.scrolled {
   margin-bottom: 24px;
 }
 
+/* Le wrapper texte (titre + rôle) doit pouvoir rétrécir sous son contenu naturel */
+.experience-header > div:not(.experience-icon) {
+  flex: 1;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 .experience-icon {
   width: 60px;
   height: 60px;
@@ -696,6 +733,8 @@ body.dark-mode .header.scrolled {
   color: var(--text-light);
   font-size: 0.9rem;
   font-weight: 500;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .experience-desc {
@@ -1015,6 +1054,8 @@ body.dark-mode .header.scrolled {
 }
 
 .skill-card {
+  max-width: 100%;
+  box-sizing: border-box;
   background: var(--bg-color-alt);
   padding: 36px 28px;
   border-radius: 18px;
@@ -1073,6 +1114,8 @@ body.dark-mode .header.scrolled {
 }
 
 .project-card {
+  max-width: 100%;
+  box-sizing: border-box;
   background: var(--bg-color-alt);
   padding: 36px;
   border-radius: 18px;
