@@ -623,6 +623,8 @@ body.dark-mode .header.scrolled {
   transform: translateY(-4px);
   border: 2px solid transparent;
   box-sizing: border-box;
+  /* Filet de sécurité : aucun enfant ne peut visuellement dépasser du cadre */
+  overflow: hidden;
   background-image:
     linear-gradient(var(--bg-color-alt), var(--bg-color-alt)),
     var(--gradient);
@@ -671,6 +673,17 @@ body.dark-mode .header.scrolled {
   box-sizing: border-box;
   word-wrap: break-word;
   overflow-wrap: break-word;
+}
+
+/* Bouton de téléchargement du mémoire : le texte est long, il doit pouvoir
+   revenir à la ligne au lieu de forcer la largeur du bouton (et donc de la card) */
+.memoire-download-btn {
+  max-width: 100%;
+  width: fit-content;
+  box-sizing: border-box;
+  white-space: normal;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
 /* ==========================================================================
@@ -1738,5 +1751,12 @@ body.dark-mode .header.scrolled {
 
   .stats-bar {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .memoire-download-btn {
+    width: 100%;
+    padding-left: 18px;
+    padding-right: 18px;
+    font-size: 0.8rem;
   }
 }
