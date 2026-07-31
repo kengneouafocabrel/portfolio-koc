@@ -1211,7 +1211,102 @@ body.dark-mode .header.scrolled {
 }
 
 /* ==========================================================================
-   10. CONTACT
+   10. SERVICES
+   ========================================================================== */
+.services .section-subtitle {
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: 1rem;
+  max-width: 700px;
+  margin: 0 auto 8px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.service-card {
+  max-width: 100%;
+  box-sizing: border-box;
+  background: var(--bg-color-alt);
+  padding: 36px;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(99, 13, 178, 0.15);
+}
+
+.service-illustration {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.service-illustration img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+}
+
+.service-card:hover .service-illustration img {
+  transform: scale(1.05);
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.service-card > p:not(.service-price) {
+  color: var(--text-light);
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.service-price {
+  margin-bottom: 24px;
+  font-size: 0.92rem;
+}
+
+.service-price-label {
+  color: var(--text-light);
+  font-weight: 500;
+  margin-right: 4px;
+}
+
+.service-price-value {
+  color: var(--accent-2);
+  font-weight: 700;
+}
+
+.service-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.service-links .btn {
+  flex: 1 1 auto;
+  min-width: 130px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   11. CONTACT
    ========================================================================== */
 .contact-content {
   display: grid;
@@ -1295,7 +1390,7 @@ body.dark-mode .header.scrolled {
 }
 
 /* ==========================================================================
-   11. FOOTER
+   12. FOOTER
    ========================================================================== */
 .footer {
   background: var(--bg-color-alt);
@@ -1339,7 +1434,7 @@ body.dark-mode .header.scrolled {
 }
 
 /* ==========================================================================
-   12. BACK TO TOP BUTTON
+   13. BACK TO TOP BUTTON
    ========================================================================== */
 .back-to-top {
   position: fixed;
@@ -1375,7 +1470,7 @@ body.dark-mode .header.scrolled {
 }
 
 /* ==========================================================================
-   13. SCROLL REVEAL ANIMATIONS
+   14. SCROLL REVEAL ANIMATIONS
    ========================================================================== */
 .reveal {
   opacity: 0;
@@ -1400,7 +1495,7 @@ body.dark-mode .header.scrolled {
 }
 
 /* ==========================================================================
-   14. ASSISTANT IA (CHAT)
+   15. ASSISTANT IA (CHAT)
    ========================================================================== */
 .chat-widget {
   position: fixed;
@@ -1597,7 +1692,7 @@ body.dark-mode .header.scrolled {
 }
 
 /* ==========================================================================
-   15. RESPONSIVE — TABLETTE (<= 992px)
+   16. RESPONSIVE — TABLETTE (<= 992px)
    ========================================================================== */
 @media (max-width: 992px) {
   .hero-container {
@@ -1640,6 +1735,10 @@ body.dark-mode .header.scrolled {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .stats-bar {
     grid-template-columns: repeat(2, 1fr);
     row-gap: 24px;
@@ -1647,7 +1746,7 @@ body.dark-mode .header.scrolled {
 }
 
 /* ==========================================================================
-   16. RESPONSIVE — MOBILE (<= 768px)
+   17. RESPONSIVE — MOBILE (<= 768px)
    ========================================================================== */
 @media (max-width: 768px) {
   :root {
@@ -1692,6 +1791,7 @@ body.dark-mode .header.scrolled {
 
   .skills-grid,
   .projects-grid,
+  .services-grid,
   .experience-grid-secondary {
     grid-template-columns: 1fr;
   }

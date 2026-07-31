@@ -178,6 +178,7 @@ const translations = {
     navExperience: "Expérience",
     navSkills: "Compétences",
     navProjects: "Projets",
+    navServices: "Services",
     navContact: "Contact",
 
     heroGreeting: "Bonjour, je suis",
@@ -284,6 +285,20 @@ const translations = {
       "Application de gestion locative complète : biens, locataires, contrats et paiements avec rappels automatiques, génération de reçus et gestion des documents légaux. Interface mobile dédiée pour locataires et propriétaires.",
     projectCodeBtn: "Voir le code sur GitHub",
 
+    servicesSubtitle:
+      "Au-delà du développement, je propose aussi des services de mise en forme de documents professionnels",
+    servicesTitle: '<span class="text-gradient">Services</span>',
+    service1Title: "Mise en forme Word",
+    service1Desc:
+      "Mise en forme professionnelle de rapports, mémoires, CV et documents académiques : styles cohérents, sommaire automatique, pagination, normes de présentation respectées.",
+    service2Title: "Création PowerPoint",
+    service2Desc:
+      "Conception de présentations professionnelles et visuellement soignées pour soutenances, pitchs ou présentations d'entreprise : slides épurés, cohérence graphique, mise en page claire.",
+    service3Title: "Excel (tableaux &amp; formules)",
+    service3Desc:
+      "Création de tableaux Excel structurés, formules et calculs automatisés, mise en forme de données, tableaux de bord simples pour le suivi d'activité.",
+    servicePriceLabel: "Tarif indicatif :",
+
     contactSubtitle: "Discutons",
     contactTitle: 'Me <span class="text-gradient">contacter</span>',
     contactLead:
@@ -317,6 +332,7 @@ const translations = {
     navExperience: "Experience",
     navSkills: "Skills",
     navProjects: "Projects",
+    navServices: "Services",
     navContact: "Contact",
 
     heroGreeting: "Hello, I'm",
@@ -421,6 +437,19 @@ const translations = {
     project2Desc:
       "Full rental management application: properties, tenants, contracts and payments with automatic reminders, receipt generation and legal document management. Dedicated mobile interface for tenants and landlords.",
     projectCodeBtn: "View code on GitHub",
+
+    servicesSubtitle: "Beyond development, I also offer professional document formatting services",
+    servicesTitle: '<span class="text-gradient">Services</span>',
+    service1Title: "Word Document Formatting",
+    service1Desc:
+      "Professional formatting of reports, theses, resumes and academic documents: consistent styles, automatic table of contents, pagination, proper presentation standards.",
+    service2Title: "PowerPoint Creation",
+    service2Desc:
+      "Design of professional, visually polished presentations for defenses, pitches or business presentations: clean slides, visual consistency, clear layout.",
+    service3Title: "Excel (Spreadsheets &amp; Formulas)",
+    service3Desc:
+      "Creation of structured Excel spreadsheets, automated formulas and calculations, data formatting, simple dashboards for activity tracking.",
+    servicePriceLabel: "Estimated price:",
 
     contactSubtitle: "Let's talk",
     contactTitle: '<span class="text-gradient">Contact</span> me',
